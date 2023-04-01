@@ -1,11 +1,11 @@
 import { CartWidget } from "../CartWidget/CartWidget";
 
-
+// En donde dice el nombre tengo un logo con la imagen y todo pero no pude hacerla funcionar de ninguna forma, no se como linkearla o armar la ruta srl para encontrar la imagen.
 export const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a><img className="Logo" src="../src/components/Imagenes/BackGraund/Logo.png"/></a>
+          <a>CyberTech</a> 
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />
           </button>
@@ -27,4 +27,3 @@ export const NavBar = () => {
       </nav>
     );
 }
-<img src="../src/components/Imagenes/BackGraund/Logo.png" alt=""></img>
