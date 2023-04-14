@@ -1,10 +1,8 @@
-
-
 export const CartWidget = ({cantCarrito}) => {
     return (
         <div>
-            <p>Carrito</p>
-            <span>{cantCarrito}</span>
+            <button className="btn btn-dark"><i className="fas fa-shopping-cart fa-lg"></i></button>
+            <p>{cantCarrito}</p>
         </div>
     );
 }

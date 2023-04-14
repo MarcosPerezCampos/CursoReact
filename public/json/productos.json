@@ -1,8 +1,4 @@
-// Consulto a mis productos de mi base de datos y se los envio a ItemList 
-import { useState, useEffect } from "react";
-import { ItemList } from "../ItemList/ItemList"
-
-const BDD = [
+[
     {
         "id": 1,
         "idCategoria": 1,
@@ -11,7 +7,7 @@ const BDD = [
         "modelo": "X515EA 15.6",
         "precio": 60000,
         "stock": 30,
-        "img": "img/pr"
+        "img": "img/notebook-lenovo.jpg"
     },
     {
         "id": 2,
@@ -124,28 +120,3 @@ const BDD = [
         "img": "img/hp-pavilion.jpg"
     }
 ]
-
-// Aca lo guarda como useState
-
-export const ItemListContainer = () => {
-
-    const [productos, setProductos] = useState ([])
-
-    useEffect(() => {
-        fetch('./json/productos.json')
-          .then(response => response.json())
-          .then(productos => {
-            const productosFiltrados = productos.filter(prod => prod.stock > 0)
-            setProductos(productosFiltrados)
-    
-          })
-    
-      }, [])
-    
-      return (
-        <div className="row">
-          {<ItemList productos={productos} />}
-        </div>
-      )
-    }
-
