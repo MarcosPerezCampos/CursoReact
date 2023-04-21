@@ -1,16 +1,27 @@
 import './App.css'
-import { NavBar } from './NavBar/NavBar'
-import { ItemCount } from './ItemCount/ItemCount';
-import { ItemListContainer } from './ItemListContainer/ItemListContainer'
-// import { Dolar } from './Dolar/Dolar';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+//Components 
+import { Navbar } from './Navbar/Navbar';
+import { ItemListContainer } from './ItemListContainer/ItemListContainer';
+import { ItemDetailContainer } from './ItemDetailContainer/ItemDetailContainer';
+import { Checkout } from './Checkout/Checkout';
+ 
 export const App = () => {
   // Aqui irian los hooks
   return(
-    <div>
-      <NavBar/>
-      {/* <Dolar/> */}
-      <ItemCount ValInicial={1} stock={15} />
-      <ItemListContainer />
-    </div>
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<ItemListContainer />} />
+          <Route path='/category/:category' element={<ItemListContainer />} />
+          <Route path='/product/:id' element={<ItemDetailContainer />} />
+          <Route path='/checkout' element={<Checkout />} />
+        </Routes>
+      </BrowserRouter>
+
+    </>
   )
 }
