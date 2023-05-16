@@ -1,26 +1,23 @@
-// Consulto a mis productos de mi base de datos y se los envio a ItemList 
+
 import { useState, useEffect } from "react"
 import { ItemList } from "../ItemList/ItemList"
 import { useParams } from "react-router-dom"
-
+import { getProducts } from "../../firebase/firebase.js"
 export const ItemListContainer = () => {
 
   const [productos, setProductos] = useState([])
   const { category } = useParams()
-
   useEffect(() => {
 
-    if (category) { //Consulto si me ingresaron un parametro en la url
-      fetch('../json/productos.json')
-        .then(response => response.json())
+    if (category) { 
+      getProducts()
         .then(productos => {
           const productosFiltrados = productos.filter(prod => prod.stock > 0).filter(prod => prod.idCategoria === parseInt(category))
           setProductos(productosFiltrados)
 
         })
     } else {
-      fetch('./json/productos.json')
-        .then(response => response.json())
+      getProducts()
         .then(productos => {
           const productosFiltrados = productos.filter(prod => prod.stock > 0)
           setProductos(productosFiltrados)
@@ -28,11 +25,11 @@ export const ItemListContainer = () => {
         })
     }
 
-  }, [category]) //Cada ves que se modifique la categoria
+  }, [category]) 
 
   return (
     <div className="row">
-      {<ItemList productos={productos} />}
+      {<ItemList productos={productos} plantilla={"Item"} />}
     </div>
   )
 }

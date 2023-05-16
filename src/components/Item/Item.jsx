@@ -1,4 +1,3 @@
-// Recibir un objeto y devolverlo en forma de componente en esta plantilla
 
 import { Link } from 'react-router-dom';
 export const Item = ({ item }) => {

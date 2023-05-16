@@ -1,0 +1,18 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.container-fluid{
+  background-image: linear-gradient(90deg, #dc307c,#5e62b0, #33b7e2)
+
+  }
+
+.Logo{
+    width: 20%;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+  } 
+

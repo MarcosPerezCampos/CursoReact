@@ -1,8 +1,8 @@
-// Incluye el CartWidget (icono para implementar mi codigo)
+
 import { CartWidget } from "../CartWidget/CartWidget";
 import { Categorias } from "./Categorias/Categorias";
 import Logo from '../Imagenes/BackGraund/Logo.png'
-// En donde dice el nombre tengo un logo con la imagen y todo pero no pude hacerla funcionar de ninguna forma, no se como linkearla o armar la ruta srl para encontrar la imagen.
+
 export const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">

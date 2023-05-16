@@ -1,6 +1,5 @@
-// ItemCount es para aumentar o disminuir el contador
 import { useCount } from "../../hooks/useCount.js"
-// PRIMER HOOK
+
 export const ItemCount = ({ ValInicial, min, max, onAdd }) => {
 
   const { count, minus, sum, reset } = useCount(ValInicial, min, max)
